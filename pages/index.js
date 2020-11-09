@@ -1,10 +1,18 @@
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import React from "react";
+import Hero from "../components/hero/";
+import FeatureContainer from "../containers/feature";
+import FooterContainer from "../containers/footer";
+import ProductsContainer from "../containers/products";
+import { productData, sweetProducts } from "../data";
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+    <>
+      <Hero />
+      <ProductsContainer heading="Choose you favourite" data={productData} />
+      <FeatureContainer />
+      <ProductsContainer heading="Sweet treats for You" data={sweetProducts} />
+      <FooterContainer />
+    </>
+  );
 }
